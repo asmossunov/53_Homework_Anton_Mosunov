@@ -31,7 +31,7 @@
 }
 
 .about-game{
-    margin-top: -20px;
+    margin-top: 40px;
     font-size: 25px;
     color: #6c6c6c;
     text-shadow: 2px 2px 1px white;
@@ -50,6 +50,7 @@
     margin-top: 15px;
     font-size: 30px;
     border-radius: 10px;
+    opacity: 0.8
 }
 
 .btn{
@@ -84,10 +85,14 @@
     padding-top: 20px;
 }
 
-.img{
-    padding-left: 20px;
-}
-
 .info-block{
     padding-left: 30px;
+}
+
+
+.form-check, form-check-input{
+    padding: 15px;
+    font-size: 25px;
+    color: #6c6c6c;
+    text-shadow: 2px 2px 1px white;
 }
