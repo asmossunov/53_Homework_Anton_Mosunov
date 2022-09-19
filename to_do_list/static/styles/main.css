@@ -1,0 +1,93 @@
+* body{
+    background-image: url('../fon_images/business_fon.jpg');
+    font-family: 'Montserrat', sans-serif;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+
+}
+
+.box{
+    width: 1300px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 20px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.main-title-home{
+	background: #2b3f44;
+	background: -webkit-linear-gradient(to bottom, #2b3f44 28%, #6da8b8 70%);
+	background: -moz-linear-gradient(to bottom, #2b3f44 28%, #6da8b8 70%);
+	background: linear-gradient(to bottom, #2b3f44 28%, #6da8b8 70%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-top: 50px;
+    margin-top: 130px;
+    font-size: 100px;
+}
+
+.about-game{
+    margin-top: -20px;
+    font-size: 25px;
+    color: #6c6c6c;
+    text-shadow: 2px 2px 1px white;
+}
+.info-title{
+    margin-top: 60px;
+    font-size: 30px;
+    color: orange;
+
+}
+
+.form-control{
+    border: 6px solid orange;
+    text-align: center;
+    color: grey;
+    margin-top: 15px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.btn{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0.8rem 3.75rem;
+    border-radius: 2.25rem;
+}
+
+.info-head{
+    margin-top: 60px;
+    font-size: 30px;
+    color: #6ea9b9;
+
+}
+.info-item{
+    margin-top: 60px;
+    font-size: 30px;
+    color: grey;
+}
+
+.info-block{
+    margin-top: 70px;
+	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	}
+
+.form-center{
+    margin: auto;
+    padding-top: 20px;
+}
+
+.img{
+    padding-left: 20px;
+}
+
+.info-block{
+    padding-left: 30px;
+}
