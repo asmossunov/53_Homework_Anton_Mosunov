@@ -44,7 +44,7 @@
 }
 
 .form-control{
-    border: 6px solid orange;
+    border: 3px solid grey;
     text-align: center;
     color: grey;
     margin-top: 15px;
@@ -54,8 +54,8 @@
 
 .btn{
     font-size: 30px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     padding: 0.8rem 3.75rem;
     border-radius: 2.25rem;
 }
