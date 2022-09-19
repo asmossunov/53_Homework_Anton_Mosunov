@@ -1,0 +1,29 @@
+[
+{
+  "model": "to_do.task",
+  "pk": 1,
+  "fields": {
+    "task_text": "Забрать письма на почте",
+    "state": "new",
+    "deadline": "2022-09-20T00:00:00Z"
+  }
+},
+{
+  "model": "to_do.task",
+  "pk": 2,
+  "fields": {
+    "task_text": "Подготовить отчёт за месяц",
+    "state": "new",
+    "deadline": "2022-09-22T00:00:00Z"
+  }
+},
+{
+  "model": "to_do.task",
+  "pk": 3,
+  "fields": {
+    "task_text": "Купить продукты перед праздником",
+    "state": "new",
+    "deadline": "2022-09-23T00:00:00Z"
+  }
+}
+]
