@@ -9,7 +9,6 @@ def index_view(request):
     if request.method == 'GET':
         tasks = Task.objects.all()
         context = {
-            'CHOICES': CHOICES,
             'tasks': tasks,
         }
         return render(request, 'index.html', context)
