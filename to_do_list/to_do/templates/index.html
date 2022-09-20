@@ -22,7 +22,7 @@
             </div>
 
             <div class="row justify-content-center text-center">
-                <div class="col-6 info-block text-center">
+                <div class="col-5 info-block text-center">
                     <div>
                         <span class="info-head">Задача</span>
                     </div>
@@ -32,9 +32,14 @@
                         <span class="info-head">Состояние</span>
                     </div>
                 </div>
-                <div class="col-3 info-block">
+                <div class="col-2 info-block">
                     <div>
                         <span class="info-head">Дата</span>
+                    </div>
+                </div>
+                <div class="col-2 info-block">
+                    <div>
+                        <span class="info-head">#</span>
                     </div>
                 </div>
             </div>
@@ -42,7 +47,7 @@
 
                 {% for task in tasks %}
 
-                    <div class="col-6 info-block text-center">
+                    <div class="col-5 info-block text-center">
                         <div>
                             <span class="info-item">{{ task.task_text }}</span>
                         </div>
@@ -54,13 +59,17 @@
                         </div>
                     </div>
 
-                    <div class="col-3 info-block text-center">
+                    <div class="col-2 info-block text-center">
                         <div>
                             <span class="info-item">{{ task.deadline |date:'Y-m-d' }}</span>
-{#                            | date:"M d Y" #}
                         </div>
                     </div>
 
+                    <div class="col-2 info-block text-center">
+                        <div>
+                            <p><a href="/tasks/?pk={{ article.pk }}">Подробнее</a></p>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
            <form action="/add_task/" method="GET">
