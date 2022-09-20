@@ -41,3 +41,8 @@ def added_task_prepare(request):
     }
     return render(request, 'index.html', context)
 
+
+def detail_view(request):
+    pk = request.GET.get('pk')
+    task = Task.objects.get(pk=pk)
+    return render(request, 'task.html', context={'task': task})
