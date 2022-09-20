@@ -34,5 +34,41 @@
     "state": "in_process",
     "deadline": "2022-09-24T00:00:00Z"
   }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$UmUBlhew1Jc234thIPQqpE$4iTng0c7nF8rSioIgNg5JYPbRLdGU0MiFhxOt38PW7g=",
+    "last_login": "2022-09-19T05:29:57.869Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-09-19T05:29:23.161Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$JH8J2YHaqTwrZ4H5qxsBN8$r9CM1B5NZRkX8I4hGMtnDr6sB9QGdkeQjKpCCNnW7us=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-09-20T08:09:04.673Z",
+    "groups": [],
+    "user_permissions": []
+  }
 }
 ]
