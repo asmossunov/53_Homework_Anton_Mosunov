@@ -50,13 +50,14 @@
 
                     <div class="col-2 info-block text-center">
                         <div>
-                            <span class="info-item">{{ task.state }}</span>
+                            <span class="info-item">{{ task.state}}</span>
                         </div>
                     </div>
 
                     <div class="col-3 info-block text-center">
                         <div>
-                            <span class="info-item">{{ task.deadline | date:"M d Y" }}</span>
+                            <span class="info-item">{{ task.deadline |date:'Y-m-d' }}</span>
+{#                            | date:"M d Y" #}
                         </div>
                     </div>
 
