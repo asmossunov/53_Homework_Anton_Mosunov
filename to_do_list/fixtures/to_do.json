@@ -3,16 +3,16 @@
   "model": "to_do.task",
   "pk": 1,
   "fields": {
-    "task_text": "Забрать письма на почте",
-    "state": "new",
-    "deadline": "2022-09-20T00:00:00Z"
+    "task_text": "Купить билеты на концерт",
+    "state": "in_process",
+    "deadline": "2022-09-29T00:00:00Z"
   }
 },
 {
   "model": "to_do.task",
   "pk": 2,
   "fields": {
-    "task_text": "Подготовить отчёт за месяц",
+    "task_text": "Забрать письма на почте",
     "state": "new",
     "deadline": "2022-09-22T00:00:00Z"
   }
@@ -21,9 +21,18 @@
   "model": "to_do.task",
   "pk": 3,
   "fields": {
-    "task_text": "Купить продукты перед праздником",
+    "task_text": "Купить билеты на самолет",
     "state": "new",
-    "deadline": "2022-09-23T00:00:00Z"
+    "deadline": "2022-09-27T00:00:00Z"
+  }
+},
+{
+  "model": "to_do.task",
+  "pk": 4,
+  "fields": {
+    "task_text": "Сдать отчет по работе",
+    "state": "in_process",
+    "deadline": "2022-09-24T00:00:00Z"
   }
 }
 ]
