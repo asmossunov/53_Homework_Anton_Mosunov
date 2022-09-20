@@ -1,11 +1,17 @@
 from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from to_do.models import Task
 from to_do.choice_config import CHOICES
 
 
 def index_view(request):
+    if request.GET.get('pk'):
+        to_delete_task_pk = request.GET.get("pk")
+        task = Task.objects.get(pk=to_delete_task_pk)
+        task.delete()
+        print(f'Удалена запись: {task}')
+        return redirect(f'/')
     if request.method == 'GET':
         tasks = Task.objects.all()
         context = {
@@ -34,15 +40,15 @@ def added_task_prepare(request):
         state=request.POST.get("state"),
         deadline=deadline
     )
-    print(task)
     tasks = Task.objects.all()
     context = {
         'tasks': tasks,
     }
-    return render(request, 'index.html', context)
+    return redirect(f'/tasks/?pk={task.pk}')
 
 
 def task_view(request):
     pk = request.GET.get('pk')
     task = Task.objects.get(pk=pk)
     return render(request, 'task.html', context={'task': task})
+
