@@ -4,7 +4,6 @@
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
-
 }
 
 .box{
@@ -31,13 +30,22 @@
 }
 
 .about-game{
-    margin-top: 40px;
+    margin-bottom: 80px;
     font-size: 25px;
     color: #6c6c6c;
     text-shadow: 2px 2px 1px white;
 }
-.info-title{
+
+.state_select{
     margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #6c6c6c;
+    text-shadow: 2px 2px 1px white;
+}
+
+.info-title{
+    margin-top: 80px;
     font-size: 30px;
     color: orange;
 
@@ -54,45 +62,74 @@
 }
 
 .btn{
-    font-size: 30px;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    padding: 0.8rem 3.75rem;
+    font-size: 25px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0.7rem 2.5rem;
     border-radius: 2.25rem;
 }
 
-.info-head{
+.info-head {
+    margin-top: 60px;
+    font-size: 30px;
+    color: grey;
+}
+
+.descript{
     margin-top: 60px;
     font-size: 30px;
     color: #6ea9b9;
+}
+.link{
+    text-decoration-line: none;
 
 }
 .info-item{
+    text-decoration-line: none;
     margin-top: 60px;
     font-size: 30px;
     color: grey;
 }
 
 .info-block{
-    margin-top: 70px;
+    padding: 10px 8px 10px 10px;
+    /*margin-top: 10px;*/
 	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-	}
+}
+
+.info-block-link{
+    padding: 10px 8px 10px 10px;
+    /*margin-top: 10px;*/
+	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.info-block-link:hover {
+    transform-origin: left top;
+    margin-top: -3px;
+    margin-left: 0px;
+  transition: margin-left 130ms;
+  transition: margin-top 130ms;
+  box-shadow: 0 10px 90px rgba(0, 0, 0, 0.4);
+}
 
 .form-center{
     margin: auto;
     padding-top: 20px;
 }
 
-.info-block{
-    padding-left: 30px;
-}
-
-
 .form-check, form-check-input{
     padding: 15px;
     font-size: 25px;
     color: #6c6c6c;
     text-shadow: 2px 2px 1px white;
+}
+
+.form-check-input-without-block{
+    padding: 15px;
+    font-size: 25px;
+    color: #6c6c6c;
 }

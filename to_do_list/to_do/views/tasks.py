@@ -18,19 +18,16 @@ def index_view(request):
             'tasks': tasks,
         }
         return render(request, 'index.html', context)
-    else:
-        return added_task_prepare(request)
-
 
 def add_task_view(request):
-    context = {
-        'CHOICES': CHOICES
-    }
-    return render(request, 'add_task.html', context)
-
+    if request.method == 'GET':
+        context = {
+            'CHOICES': CHOICES
+        }
+        return render(request, 'add_task.html', context)
+    return added_task_prepare(request)
 
 def added_task_prepare(request):
-    print(request.POST)
     if request.POST.get("deadline") == '':
         deadline = None
     else:
@@ -40,15 +37,24 @@ def added_task_prepare(request):
         state=request.POST.get("state"),
         deadline=deadline
     )
-    tasks = Task.objects.all()
-    context = {
-        'tasks': tasks,
-    }
     return redirect(f'/tasks/?pk={task.pk}')
 
-
 def task_view(request):
-    pk = request.GET.get('pk')
+    pk = request.GET.get("pk")
+    if request.method == 'POST':
+        Task.objects.filter(pk=pk).update(
+            task_text=request.POST.get("task_text"),
+            state=request.POST.get("state"),
+            deadline=request.POST.get("deadline"))
     task = Task.objects.get(pk=pk)
     return render(request, 'task.html', context={'task': task})
 
+def task_edit_view(request):
+    if request.GET.get('pk'):
+        pk = request.GET.get("pk")
+        task = Task.objects.get(pk=pk)
+        context = {
+                'CHOICES': CHOICES,
+                'task': task,
+            }
+        return render(request, 'edit_task.html', context)
