@@ -34,6 +34,7 @@ def added_task_prepare(request):
         deadline = request.POST.get("deadline")
     task = Task.objects.create(
         task_text=request.POST.get("task_text"),
+        task_description=request.POST.get("task_description"),
         state=request.POST.get("state"),
         deadline=deadline
     )

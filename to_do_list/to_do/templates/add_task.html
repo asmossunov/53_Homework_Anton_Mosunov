@@ -23,35 +23,36 @@
 
            <form action="/tasks/add/" method="POST">
                 {% csrf_token%}
-                <div class="row text justify-content-center">
-                    <div class="col-5">
-                         <input name="task_text" class="form-control id="task_text" placeholder="тема новой задачи">
-                    </div>
-                </div>
 
-               <div class="row text justify-content-center">
+                <div class="row text justify-content-center">
+                    <div class="col-5 text-center">
+                        <input name="task_text" class="form-control id="task_text" placeholder="тема новой задачи">
+                        <p class="state_select">дедлайн</p>
+                            <input name="deadline" type="date" class="form-control id="deadline" placeholder="срок выполнения">
+                    </div>
+
 
                     <div class="col-5 text-center">
-                        <p class="state_select">дедлайн</p>
-                        <input name="deadline" type="date" class="form-control id="deadline" placeholder="срок выполнения">
+                        <textarea class="form-control" name="task_description" id="exampleFormControlTextarea1" rows="5" placeholder="описание"></textarea>
                     </div>
-                </div>
 
-               <div class="row text justify-content-center">
-                    <div class="col-4 text-center pt-10">
-                        <p class="state_select">состояние задачи</p>
-                    </div>
-               </div>
-               {% for choice in CHOICES %}
-                   <div class="row text justify-content-center">
-                       <div class="col-4">
-                           <div class="form-check">
-                              <input class="form-check-input" type="radio" name="state" value={{choice.0}} id="state">
-                              <label class="form-check-label" for="state">{{choice.1}}</label>
-                           </div>
+
+                       <div class="row text justify-content-center">
+                            <div class="col-4 text-center pt-10">
+                                <p class="state_select">состояние задачи</p>
+                            </div>
                        </div>
-                   </div>
-               {% endfor %}
+                       {% for choice in CHOICES %}
+                           <div class="row text justify-content-center">
+                               <div class="col-4">
+                                   <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="state" value={{choice.0}} id="state">
+                                      <label class="form-check-label" for="state">{{choice.1}}</label>
+                                   </div>
+                               </div>
+                           </div>
+                       {% endfor %}
+                </div>
 
                 <div class="row justify-content-center">
                     <div class="col-10 text-center">
