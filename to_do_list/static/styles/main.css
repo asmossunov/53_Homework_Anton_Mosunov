@@ -8,8 +8,7 @@
 
 .box{
     width: 1300px;
-    margin: auto;
-    margin-bottom: 50px;
+    margin: auto auto 50px;
     background-color: white;
     border-radius: 20px;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -48,7 +47,6 @@
     margin-top: 80px;
     font-size: 30px;
     color: orange;
-
 }
 
 .form-control{
@@ -76,14 +74,14 @@
 }
 
 .descript{
-    margin-top: 60px;
+    margin-top: 57px;
     font-size: 30px;
     color: #6ea9b9;
 }
 .link{
     text-decoration-line: none;
-
 }
+
 .info-item{
     text-decoration-line: none;
     margin-top: 60px;
@@ -112,8 +110,8 @@
     transform-origin: left top;
     margin-top: -3px;
     margin-left: 0px;
-  transition: margin-left 130ms;
-  transition: margin-top 130ms;
+    transition: margin-left 130ms;
+    transition: margin-top 130ms;
   box-shadow: 0 10px 90px rgba(0, 0, 0, 0.4);
 }
 
