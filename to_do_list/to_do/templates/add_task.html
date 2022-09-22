@@ -44,14 +44,21 @@
                        </div>
                         <div class="row text justify-content-center">
                        {% for choice in CHOICES %}
-
+                            {% if choice.0 == "new" %}
                                <div class="col-2">
+                                   <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="state" value={{choice.0}} id="state" checked>
+                                      <label class="form-check-label" for="state">{{choice.1}}</label>
+                                   </div>
+                               </div>
+                            {% else %}
+                                <div class="col-2">
                                    <div class="form-check">
                                       <input class="form-check-input" type="radio" name="state" value={{choice.0}} id="state">
                                       <label class="form-check-label" for="state">{{choice.1}}</label>
                                    </div>
                                </div>
-
+                            {% endif %}
                        {% endfor %}
                         </div>
                 </div>
