@@ -42,7 +42,7 @@
             <div class="row justify-content-center">
                 {% for task in tasks %}
                     <div class="col-5 info-block-link text-center">
-                        <a class="link" href="/tasks/?pk={{ task.pk }}"><span class="info-item">{{ task.task_text }}</span></a>
+                        <a class="link" href="/tasks/{{ task.pk }}"><span class="info-item">{{ task.task_text }}</span></a>
                     </div>
 
                     <div class="col-2 info-block text-center">

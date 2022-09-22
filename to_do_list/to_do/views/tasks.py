@@ -1,5 +1,5 @@
 from datetime import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from to_do.models import Task
 from to_do.choice_config import CHOICES
@@ -38,10 +38,9 @@ def added_task_prepare(request):
         state=request.POST.get("state"),
         deadline=deadline
     )
-    return redirect(f'/tasks/?pk={task.pk}')
+    return redirect(f'/tasks/{task.pk}')
 
-def task_view(request):
-    pk = request.GET.get("pk")
+def task_view(request, pk):
     if request.POST.get("task_description") == '':
         task = Task.objects.get(pk=pk)
         task_description = task.task_description
@@ -56,15 +55,13 @@ def task_view(request):
             state=request.POST.get("state"),
             deadline=deadline
         )
-    task = Task.objects.get(pk=pk)
+    task = get_object_or_404(Task, pk=pk)
     return render(request, 'task.html', context={'task': task})
 
-def task_edit_view(request):
-    if request.GET.get('pk'):
-        pk = request.GET.get("pk")
-        task = Task.objects.get(pk=pk)
-        context = {
-                'CHOICES': CHOICES,
-                'task': task,
-            }
-        return render(request, 'edit_task.html', context)
+def task_edit_view(request, pk):
+    task = Task.objects.get(pk=pk)
+    context = {
+            'CHOICES': CHOICES,
+            'task': task,
+        }
+    return render(request, 'edit_task.html', context)

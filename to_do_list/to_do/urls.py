@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view),
     path('tasks/add/', add_task_view),
-    path('tasks/', task_view),
+    path('tasks/<int:pk>', task_view),
     path('edit/', task_view),
-    path('tasks/edit/', task_edit_view)
+    path('tasks/edit/<int:pk>', task_edit_view)
 ]
