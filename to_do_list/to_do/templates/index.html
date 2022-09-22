@@ -42,7 +42,7 @@
             <div class="row justify-content-center">
                 {% for task in tasks %}
                     <div class="col-5 info-block-link text-center">
-                        <a class="link" href="/tasks/{{ task.pk }}"><span class="info-item">{{ task.task_text }}</span></a>
+                        <a class="link" href="{% url 'task_detail' task.pk %}"><span class="info-item">{{ task.task_text }}</span></a>
                     </div>
 
                     <div class="col-2 info-block text-center">
@@ -58,7 +58,7 @@
                     </div>
                 {% endfor %}
             </div>
-           <form action="/tasks/add" method="GET">
+           <form action="{% url 'task_add' %}" method="GET">
                 <div class="row justify-content-center">
                     <div class="col-10 text-center">
                         <button type="submit" class="btn btn-secondary btn-block">Создать задачу</button>
