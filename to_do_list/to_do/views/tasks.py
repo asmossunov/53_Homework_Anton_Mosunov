@@ -42,11 +42,20 @@ def added_task_prepare(request):
 
 def task_view(request):
     pk = request.GET.get("pk")
+    if request.POST.get("task_description") == '':
+        task = Task.objects.get(pk=pk)
+        task_description = task.task_description
+    if request.POST.get("deadline") == '':
+        deadline = None
+    else:
+        deadline = request.POST.get("deadline")
     if request.method == 'POST':
         Task.objects.filter(pk=pk).update(
             task_text=request.POST.get("task_text"),
+            task_description=request.POST.get("task_description"),
             state=request.POST.get("state"),
-            deadline=request.POST.get("deadline"))
+            deadline=deadline
+        )
     task = Task.objects.get(pk=pk)
     return render(request, 'task.html', context={'task': task})
 
