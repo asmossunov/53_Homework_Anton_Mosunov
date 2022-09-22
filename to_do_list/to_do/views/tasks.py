@@ -23,12 +23,16 @@ def add_task_view(request):
     return added_task_prepare(request)
 
 def added_task_prepare(request):
+    if request.POST.get("task_text") == '':
+        task_text = 'тема не определена'
+    else:
+        deadline = request.POST.get("task_text")
     if request.POST.get("deadline") == '':
         deadline = None
     else:
         deadline = request.POST.get("deadline")
     task = Task.objects.create(
-        task_text=request.POST.get("task_text"),
+        task_text=task_text,
         task_description=request.POST.get("task_description"),
         state=request.POST.get("state"),
         deadline=deadline
