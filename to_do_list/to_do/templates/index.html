@@ -34,21 +34,23 @@
 
             <div class="row justify-content-center">
                 {% for task in tasks %}
-                    <div class="col-5 info-block-link text-center">
-                        <a class="link" href="{% url 'task_detail' task.pk %}"><span class="info-item">{{ task.task_text }}</span></a>
-                    </div>
-
-                    <div class="col-2 info-block text-center">
-                        <div>
-                            <span class="info-item">{{ task.state}}</span>
+                        <div class="col-5 info-block-link text-center">
+                            <a class="link" href="{% url 'task_detail' task.pk %}"><span class="info-item">{{ task.task_text }}</span></a>
                         </div>
-                    </div>
-
-                    <div class="col-2 info-block text-center">
-                        <div>
-                            <span class="info-item">{{ task.deadline |date:'Y-m-d' }}</span>
+                        {% for choice in CHOICES %}
+                            {% if task.state == choice.0 %}
+                                <div class="col-2 info-block text-center">
+                                    <div>
+                                        <span class="info-item">{{ choice.1 }}</span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <div class="col-2 info-block text-center">
+                            <div>
+                                <span class="info-item">{{ task.deadline |date:'Y-m-d' }}</span>
+                            </div>
                         </div>
-                    </div>
                 {% endfor %}
             </div>
            <form action="{% url 'task_add' %}" method="GET">
