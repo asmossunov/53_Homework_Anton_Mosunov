@@ -26,7 +26,7 @@ def added_task_prepare(request):
     if request.POST.get("task_text") == '':
         task_text = 'тема не определена'
     else:
-        deadline = request.POST.get("task_text")
+        task_text = request.POST.get("task_text")
     if request.POST.get("deadline") == '':
         deadline = None
     else:
