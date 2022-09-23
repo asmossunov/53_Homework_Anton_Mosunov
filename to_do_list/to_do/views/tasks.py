@@ -38,11 +38,16 @@ def added_task_prepare(request):
         state=request.POST.get("state"),
         deadline=deadline
     )
+    print(f'Добавлена запись: {task}')
     # return redirect(f'/tasks/{task.pk}')
     # return redirect(reverse('task_detail', kwargs={'pk': task.pk}) )
     return redirect('task_detail', pk=task.pk)
 
 def task_view(request, pk):
+    if request.POST.get("task_text") == '':
+        task_text = 'тема не определена'
+    else:
+        task_text = request.POST.get("task_text")
     if request.POST.get("task_description") == '':
         task = Task.objects.get(pk=pk)
         task_description = task.task_description
@@ -52,13 +57,14 @@ def task_view(request, pk):
         deadline = request.POST.get("deadline")
     if request.method == 'POST':
         Task.objects.filter(pk=pk).update(
-            task_text=request.POST.get("task_text"),
+            task_text=task_text,
             task_description=request.POST.get("task_description"),
             state=request.POST.get("state"),
             deadline=deadline
         )
+        print(f'Обновление записи ID {pk}')
     task = get_object_or_404(Task, pk=pk)
-    return render(request, 'task.html', context={'task': task})
+    return render(request, 'task.html', context={'task': task, 'CHOICES': CHOICES})
 
 def task_edit_view(request, pk):
     task = Task.objects.get(pk=pk)
@@ -71,5 +77,5 @@ def task_edit_view(request, pk):
 def confirmation_view(request, pk):
     task = Task.objects.get(pk=pk)
     task.delete()
-    print(f'Удалена запись: {task}')
+    print(f'Удалена запись ID {pk}')
     return render(request, 'confirmation.html', context={'task': task})
