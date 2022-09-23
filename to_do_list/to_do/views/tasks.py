@@ -39,9 +39,8 @@ def added_task_prepare(request):
         deadline=deadline
     )
     print(f'Добавлена запись: {task}')
-    # return redirect(f'/tasks/{task.pk}')
-    # return redirect(reverse('task_detail', kwargs={'pk': task.pk}) )
-    return redirect('task_detail', pk=task.pk)
+    return redirect(reverse('task_detail', kwargs={'pk': task.pk}) )
+
 
 def task_view(request, pk):
     if request.POST.get("task_text") == '':

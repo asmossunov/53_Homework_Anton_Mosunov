@@ -15,7 +15,7 @@
                 <p class="about-game">страница добавления задачи</p>
             </div>
 
-           <form action="/tasks/add/" method="POST">
+           <form action="{% url 'task_add' %}" method="POST">
                 {% csrf_token%}
 
                 <div class="row text justify-content-center">
